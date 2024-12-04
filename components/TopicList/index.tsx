@@ -32,7 +32,7 @@ export default async function TopicList() {
 
         <div className="flex gap-2">
           <RemoveButton />
-          <Link href={`/editTopic/${item.id}`}>
+          <Link href={`/editTopic/${item._id}`}>
             <HiPencilAlt size={24} />
           </Link>
         </div>
