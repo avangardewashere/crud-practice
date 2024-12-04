@@ -19,19 +19,19 @@ const getTopics = async () => {
 };
 
 export default async function TopicList() {
-  const   {topics}  = await getTopics();
+  const { topics } = await getTopics();
  
     
   return (
     <>{topics?.map((item:any)=>(
-        <div key={item?.id} className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start">
+        <div key={item?._id} className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start">
         <div>
           <h2 className="font-bold text-2xl">{item.title ?? "Topic Title"}</h2>
           <div>{item.description ?? "Topic Description"}</div>
         </div>
 
         <div className="flex gap-2">
-          <RemoveButton />
+          <RemoveButton id={item._id} />
           <Link href={`/editTopic/${item._id}`}>
             <HiPencilAlt size={24} />
           </Link>
